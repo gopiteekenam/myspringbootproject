@@ -6,7 +6,7 @@ This README would normally document whatever steps are necessary to get your app
 
 * Quick summary of the project
 * Version 0.1
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* github
 
 ### How do I get set up? ###
 
