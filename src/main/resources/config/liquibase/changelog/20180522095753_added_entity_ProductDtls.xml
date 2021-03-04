@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity ProductDtls.
+    -->
+    <changeSet id="20180522095753-1" author="gopit">
+        <createTable tableName="product_dtls">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="prdt_title" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="prdt_desc" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="detailed_spec" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="image_url" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="brand_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="prdt_tag_id" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="base_price" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="marked_percentage" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sell_price" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="currency_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="jhi_size" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="size_unit" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="size_varient_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="color" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_drop_ship" type="bit">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_clearence" type="bit">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_discontinued" type="bit">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_sale" type="bit">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_premium" type="bit">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="prdt_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="prdt_category" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_on" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="last_updated_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="last_updated_on" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+            <column name="inventory_dtls_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>
+            <column name="seller_details_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="drop_ship_dtls_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="product_tag_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

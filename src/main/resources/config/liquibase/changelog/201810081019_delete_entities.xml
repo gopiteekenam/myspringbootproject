@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+	<!-- Added the constraints for entity PurchaseOrder. -->
+	<changeSet id="201810081919" author="gopit">
+
+		<dropForeignKeyConstraint
+			baseTableName="purchase_order"
+			constraintName="fk_purchase_order_placement_id" />
+		<dropForeignKeyConstraint
+			baseTableName="purchase_order"
+			constraintName="fk_purchase_order_purchase_order_dsct_code_id" />
+		<dropForeignKeyConstraint
+			baseTableName="purchase_order_item"
+			constraintName="fk_purchase_order_item_product_dtls_id" />
+		<dropForeignKeyConstraint
+			baseTableName="purchase_order_item"
+			constraintName="fk_purchase_order_item_purchase_order_id" />
+
+		<dropTable tableName="placement" />
+		<dropTable tableName="purchase_order_item" />
+		<dropTable tableName="purchase_order" />
+
+	</changeSet>
+</databaseChangeLog>

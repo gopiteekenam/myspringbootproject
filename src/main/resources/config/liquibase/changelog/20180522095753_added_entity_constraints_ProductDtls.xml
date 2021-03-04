@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ProductDtls.
+    -->
+    <changeSet id="20180522095753-2" author="gopit">
+        
+        <addForeignKeyConstraint baseColumnNames="inventory_dtls_id"
+                                 baseTableName="product_dtls"
+                                 constraintName="fk_product_dtls_inventory_dtls_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="inventory_dtls"/>
+
+        <addForeignKeyConstraint baseColumnNames="seller_details_id"
+                                 baseTableName="product_dtls"
+                                 constraintName="fk_product_dtls_seller_details_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="seller_details"/>
+
+        <addForeignKeyConstraint baseColumnNames="drop_ship_dtls_id"
+                                 baseTableName="product_dtls"
+                                 constraintName="fk_product_dtls_drop_ship_dtls_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="drop_ship_dtls"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_tag_id"
+                                 baseTableName="product_dtls"
+                                 constraintName="fk_product_dtls_product_tag_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_tag"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,9 @@
+${AnsiColor.GREEN}╗
+${AnsiColor.GREEN}█!║========||
+${AnsiColor.GREEN}║!         ||
+${AnsiColor.GREEN}║!
+${AnsiColor.GREEN}║!     ====||
+${AnsiColor.GREEN} !_________|| 
+                                                            
+
+${AnsiColor.BRIGHT_BLUE}:: Biz2Tech  :: Running Spring Boot ${spring-boot.version} ::

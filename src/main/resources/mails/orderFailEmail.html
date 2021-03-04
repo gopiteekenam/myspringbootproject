@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:text="#{email.activation.title}">American Fragrances
+	Order Success</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="shortcut icon" th:href="@{|${baseUrl}/favicon.ico|}" />
+</head>
+<body>
+	<p th:text="#{email.activation.greeting(${user.login})}">Dear</p>
+	<p th:text="#{email.order.fail.text1}">Your American Fragrances
+		account order has been created, please click on the URL below to
+		access it:</p>
+	<p>
+		<a th:href="${baseUrl}" th:text="#{email.order.fail.text3}">American
+			Fragrances Orders</a>
+	</p>
+	<p th:text="#{email.order.fail.text2}">Your Order Details:</p>
+	<p th:text="${orderDetails}">Orders</p>
+	<p>
+		<span th:text="#{email.activation.text2}">Regards, </span> <br /> <em
+			th:text="#{email.signature}">American Fragrances Team.</em>
+	</p>
+</body>
+</html>

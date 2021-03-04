@@ -1,0 +1,184 @@
+//entities
+entity ProductDtls{
+	prdtTitle String
+	prdtDesc String
+	detailedSpec String
+	imageURL String
+	brandName String
+	prdtTagId BigDecimal
+	basePrice Double
+	markedPercentage Double
+	sellPrice Double
+	currencyCode String
+	size SizeCapacityUnit
+	sizeUnit SizeMeasurementUnit
+	sizeVarientCode String
+	color String
+	isDropShip Boolean
+	isClearence Boolean
+	isDiscontinued Boolean
+	isSale Boolean
+	isPremium Boolean
+	prdtType String
+	prdtCategory String
+	createdBy String
+	createdOn LocalDate
+	lastUpdatedBy String
+	lastUpdatedOn LocalDate
+}
+entity SellerDetails{
+	name String
+	address String
+}
+entity InventoryDtls{
+	desc String
+	totalCnt BigDecimal
+	avblCnt BigDecimal
+	sellCnt BigDecimal
+	basePrice Double
+	markedPercentage Double
+	sellPrice Double
+	currencyCode String
+	createdBy String
+	createdOn LocalDate
+	lastUpdatedBy String
+	lastUpdatedOn LocalDate
+}
+entity DropShipDtls{
+	vendorName String
+	vendorUrl String
+	totalChrgToCust Double
+	currencyCode String
+	margin Double
+	createdBy String
+	createdOn LocalDate
+	lastUpdatedBy String
+	lastUpdatedOn LocalDate
+}
+entity PurchaseOrder {
+	desc String
+	orderType OrderType
+	totalProductsPrice Double
+	taxCharge Double
+	shipmentCharge Double
+	totalPrice Double
+	orderDate LocalDate
+	deliveryBy LocalDate
+	statusCode OrderState
+	trackingNotes String
+	createdBy String
+	createdOn LocalDate
+	lastUpdatedBy String
+	lastUpdatedOn LocalDate
+}
+entity PurchaseOrderItem {
+	quantity Integer
+}
+entity PurchaseOrderDsctCode{
+	code String
+	discountPercentage Double
+	validFrom LocalDate
+	validTo LocalDate
+	createdBy String
+	createdOn LocalDate
+	lastUpdatedBy String
+	lastUpdatedOn LocalDate
+}
+entity Placement{
+	transporterName String
+	shippingCharges Integer
+	deliveryAddress String
+	state String
+	pincode BigDecimal
+	trackingId String
+	placementDate LocalDate
+}
+entity TaxItem{
+	pincode BigDecimal
+	name String
+	description String
+	percentage Double
+	applicableFrom LocalDate
+	applicableTill LocalDate
+}
+entity ProductTag{
+	tagName String
+	tagDescription String
+	productTagParentId BigDecimal
+	createdBy String
+	createdOn LocalDate
+	lastUpdatedBy String
+	lastUpdatedOn LocalDate
+}
+entity ShoppingCart{
+	description String
+	createdBy String
+	createdOn LocalDate
+	lastUpdatedBy String
+	lastUpdatedOn LocalDate
+}
+entity ShoppingCartItem{
+	quantity Integer
+}
+entity ProductColor{
+	prdtId BigDecimal
+	colorPosition BigDecimal 
+	colorDepth BigDecimal 
+	colorMoodLevel BigDecimal 
+	createdBy String
+	createdOn LocalDate
+	lastUpdatedBy String
+	lastUpdatedOn LocalDate
+}
+//Types
+enum SizeCapacityUnit {
+	SMALL, MEDIUM , LARGE , EXTRALARGE , CUSTOM
+}
+enum SizeMeasurementUnit {
+	ML, GMS
+}
+enum OrderType {
+	SOLO, CART, DEAL
+}
+enum OrderState {
+	ORDERED, PREPARED, PLACED, TRACKED, DELIVERED, RETURNED, MISDELIVERED, INDISPUTE
+}
+//entity relationships
+relationship ManyToOne{
+	ProductDtls{SellerDetails} to SellerDetails{ProductDtls}
+}
+relationship OneToOne{
+	ProductDtls{InventoryDtls} to InventoryDtls{ProductDtls}
+}
+relationship ManyToOne{
+	ProductDtls{DropShipDtls} to DropShipDtls{ProductDtls}
+}
+relationship OneToMany{
+	ProductTag{ProductDtls} to ProductDtls
+}
+relationship OneToMany{
+	PurchaseOrder{PurchaseOrderItem} to PurchaseOrderItem{PurchaseOrder}
+}
+relationship ManyToOne{
+	PurchaseOrderItem{ProductDtls} to ProductDtls
+}
+relationship OneToMany{
+	PurchaseOrderDsctCode{PurchaseOrder} to PurchaseOrder
+}
+relationship OneToOne{
+	PurchaseOrder{Placement} to Placement{PurchaseOrder}
+}
+relationship ManyToOne{
+	ShoppingCartItem{ShoppingCart} to ShoppingCart{ShoppingCartItem}
+}
+relationship ManyToOne{
+	ShoppingCartItem{ProductDtls} to ProductDtls
+}
+relationship ManyToOne{
+	ProductColor{prdtId} to ProductDtls{id}
+}
+relationship ManyToMany{
+	ProductDtls{ProductTag} to ProductTag{ProductDtls}
+}
+dto all with mapstruct
+service all with serviceImpl

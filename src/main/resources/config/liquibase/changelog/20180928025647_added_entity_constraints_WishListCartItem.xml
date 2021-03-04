@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity WishListCartItem.
+    -->
+    <changeSet id="20180928025647-2" author="gopit">
+        
+        <addForeignKeyConstraint baseColumnNames="wish_list_cart_id"
+                                 baseTableName="wish_list_cart_item"
+                                 constraintName="fk_wish_list_cart_item_wish_list_cart_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="wish_list_cart"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_dtls_id"
+                                 baseTableName="wish_list_cart_item"
+                                 constraintName="fk_wish_list_cart_item_product_dtls_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_dtls"/>
+
+    </changeSet>
+</databaseChangeLog>

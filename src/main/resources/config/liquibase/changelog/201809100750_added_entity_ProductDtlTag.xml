@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<property name="now" value="now()" dbms="h2" />
+
+	<property name="now" value="now()" dbms="mysql" />
+	<property name="autoIncrement" value="true" />
+
+	<property name="floatType" value="float4"
+		dbms="postgresql, h2" />
+	<property name="floatType" value="float"
+		dbms="mysql, oracle, mssql" />
+
+	<changeSet id="201809100750" author="gopit">
+		<createTable tableName="product_dtls_product_tag">
+			<column name="product_dtls_id" type="bigint">
+				<constraints nullable="false" />
+			</column>
+			<column name="product_tags_id" type="bigint">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+
+		<addPrimaryKey
+			columnNames="product_dtls_id, product_tags_id"
+			tableName="product_dtls_product_tag" />
+
+		<addForeignKeyConstraint
+			baseColumnNames="product_dtls_id"
+			baseTableName="product_dtls_product_tag"
+			constraintName="fk_product_dtls_product_tag_to_product_dtls"
+			referencedColumnNames="id" referencedTableName="product_dtls" />
+
+		<addForeignKeyConstraint
+			baseColumnNames="product_tags_id"
+			baseTableName="product_dtls_product_tag"
+			constraintName="fk_product_dtls_product_tag_to_product_tag"
+			referencedColumnNames="id" referencedTableName="product_tag" />
+
+		<dropForeignKeyConstraint
+			baseTableName="product_dtls"
+			constraintName="fk_product_dtls_product_tag_id" />
+
+		<dropColumn tableName="product_dtls"
+			columnName="prdt_tag_id" />
+
+		<dropColumn tableName="product_dtls"
+			columnName="product_tag_id" />
+	</changeSet>
+</databaseChangeLog>

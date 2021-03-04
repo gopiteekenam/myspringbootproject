@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095753_added_entity_ProductDtls.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095754_added_entity_SellerDetails.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095755_added_entity_InventoryDtls.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095756_added_entity_DropShipDtls.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095757_added_entity_PurchaseOrder.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095758_added_entity_PurchaseOrderItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095759_added_entity_PurchaseOrderDsctCode.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095800_added_entity_Placement.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095801_added_entity_TaxItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095802_added_entity_ProductTag.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095803_added_entity_ShoppingCart.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095804_added_entity_ShoppingCartItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180928025646_added_entity_WishListCart.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180928025647_added_entity_WishListCartItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181002031154_added_entity_UserAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201810031016_added_entity_column_UserAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201810031747_added_entity_column_User.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095753_added_entity_constraints_ProductDtls.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095757_added_entity_constraints_PurchaseOrder.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095758_added_entity_constraints_PurchaseOrderItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180522095804_added_entity_constraints_ShoppingCartItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201809100750_added_entity_ProductDtlTag.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201809100810_added_entity_ProductColor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201809141156_added_entity_ProductUserColor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201809231425_added_entity_ProductReview.xml" relativeToChangelogFile="false"/>  
+    <include file="config/liquibase/changelog/20180928025647_added_entity_constraints_WishListCartItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181002031154_added_entity_constraints_UserAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200209031154_added_entity_testimonials.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200209031254_added_entity_colorcategory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200210031254_added_entity_user_coupon_code.xml" relativeToChangelogFile="false"/>
+    <!-- latest changes casing tables/constraints to delete  -->
+    <include file="config/liquibase/changelog/201810081019_delete_entities.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180911120531_added_entity_PurchaseOrder.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180911120532_added_entity_PurchaseOrderItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180911120534_added_entity_Placement.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181005091355_added_entity_Payment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180911120532_added_entity_constraints_PurchaseOrderItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180911120531_added_entity_constraints_PurchaseOrder.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201810201209_altered_entity_Payment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201810201646_added_column_inventory_dtls.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201810271153_altered_entity_ProductColor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201811091814_altered_entity_Payment.xml" relativeToChangelogFile="false"/>
+</databaseChangeLog>
