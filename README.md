@@ -5,7 +5,7 @@ This README would normally document whatever steps are necessary to get your app
 ### What is this repository for? ###
 
 * Quick summary of this project
-* Version 0.1
+* Version 0.2
 * github project
 
 ### How do I get set up? ###
