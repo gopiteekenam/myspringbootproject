@@ -6,7 +6,7 @@ This README would normally document whatever steps are necessary to get your app
 
 * Quick summary of this project
 * Version 0.1
-* github project for webhook
+* github project for webhook to cover auto build
 
 ### How do I get set up? ###
 
