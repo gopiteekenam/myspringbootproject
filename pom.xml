@@ -11,7 +11,7 @@
 
 	<properties>
 		<!-- Build properties -->
-		<maven.version>cc3.0.0</maven.version>
+		<maven.version>3.0.0</maven.version>
 		<java.version>1.8</java.version>
 		<scala.version>2.12.1</scala.version>
 		<node.version>v8.9.4</node.version>
@@ -124,7 +124,7 @@
 		</dependency>
 		<dependency>
 			<groupId>io.dropwizard.metrics</groupId>
-			<artifactId>zzmetrics-jvm</artifactId>
+			<artifactId>metrics-jvm</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.dropwizard.metrics</groupId>
