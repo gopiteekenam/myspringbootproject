@@ -124,7 +124,7 @@
 		</dependency>
 		<dependency>
 			<groupId>io.dropwizard.metrics</groupId>
-			<artifactId>metrics-jvm</artifactId>
+			<artifactId>zzmetrics-jvm</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.dropwizard.metrics</groupId>
