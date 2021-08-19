@@ -91,8 +91,8 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>io.github.jhipster1</groupId>
-				<artifactId>jhipster-dependencies2</artifactId>
+				<groupId>io.github.jhipster</groupId>
+				<artifactId>jhipster-dependencies</artifactId>
 				<version>${jhipster-dependencies.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
