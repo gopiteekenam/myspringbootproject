@@ -5,7 +5,6 @@ node {
         git 'https://github.com/jglick/simple-maven-project-with-tests.git'
         // Get the Maven tool.
         // ** NOTE: This 'M3' Maven taool must be configured
-        // **       in the global configuration.
         mvnHome = tool 'maven'
     }
     stage('Build') {
