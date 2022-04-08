@@ -1,3 +1,4 @@
+/** spring boot applicaiton **/
 package com.biz2tech.app;
 
 import java.net.InetAddress;
