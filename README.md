@@ -1,6 +1,6 @@
 #README#
 
-This README would normally document whatever steps are necessary to get your application up and running project
+This README would normally document whatever steps are necessary to get your application up and running project in spring boot project
 
 ### What is this repository for? ###
 
